@@ -1,0 +1,12 @@
+{
+  "name": "frontend-test-mission",
+  "version": "1.0.0",
+  "description": "Esta é uma missão inicial para teste de suas habilidades Jedi com React e React native",
+  "main": "index.js",
+  "scripts": {
+    "api": "json-server --watch mock/product.json --port 8000"
+  },
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
