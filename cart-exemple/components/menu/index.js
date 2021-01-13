@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Link from 'next/link'
 
 import Cart from '../cart/index';
 
@@ -19,19 +20,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(badgeCount) {
   const classes = useStyles();
-
+  
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color=""> 
+      <AppBar position="fixed" color="" variant="contained"> 
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Shopping Next
+            <Link href="/">
+              <a>
+              Shopping Next
+              </a>
+            </Link>
           </Typography>
-          <Button color="inherit">
-              <Cart />
-          </Button>
+            <Link href="cart-page/cart">
+              <Button color="inherit">
+                  <Cart badgeCount={badgeCount}/>
+              </Button>
+            </Link>
         </Toolbar>
       </AppBar>
     </div>  
